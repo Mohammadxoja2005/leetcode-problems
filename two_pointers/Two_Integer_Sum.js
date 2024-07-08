@@ -5,27 +5,14 @@
 // Output: [1,2]
 
 function twoSum(nums, target) {
-    const result = [];
     let left = 0;
     let right = nums.length - 1;
 
     while(left < right) {
         let sum = nums[left] + nums[right];
 
-        result.push(nums[left], nums[right]);
-
-        if(result.includes(nums[left])) {
-           left++;
-           continue;
-        }
-
-        if(result.includes(nums[right])) {
-            right--;
-            continue;
-        }
-
         if(sum === target) {
-            return result;
+            return [left + 1, right + 1];
         }else if(sum > target){
             right--;
         }else {
@@ -33,7 +20,7 @@ function twoSum(nums, target) {
         }
     }
 
-    return undefined;
+    return [];
 
 }
 

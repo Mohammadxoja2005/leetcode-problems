@@ -16,19 +16,18 @@
 function isPalindrome(s) {
     let left = 0;
     let right = s.length - 1;
-    const exp = /[a-z]/
+    const exp = /[a-z0-9]/
 
     while(left < right) {
         if(!exp.test(s[left].toLowerCase())) {
-            console.log("before", left);
             left++;
-            console.log("after", left);
+            continue;
         }
         if(!exp.test(s[right].toLowerCase())) {
             right--;
+            continue;
         }
 
-        console.log("element", left);
         if(s[left].toLowerCase() !== s[right].toLowerCase()){
           return false;
         }
